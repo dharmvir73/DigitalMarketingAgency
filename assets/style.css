@@ -152,6 +152,7 @@ h4 {
   background: var(--bittersweet);
   border-color: var(--bittersweet);
   color: var(--white);
+  outline: none;
 }
 
 .btn {
@@ -167,8 +168,9 @@ h4 {
   --bittersweet: hsl(2, 90%, 65%);
 }
 
-.btn-secondary:is(:hover, :focus) {
-  background: hsl(0, 0, 100%, 0.1);
+.btn-secondry:is(:hover, :focus) {
+  background: hsl(0, 0, 100%, 0.2);
+  outline: none;
 }
 
 /*----------------------------------------------------------------*\
@@ -230,7 +232,9 @@ header .container {
 }
 
 .navbar-link:is(:hover, :focus) {
-  background: hsl(0, 0%, 100%, 0.2);
+  color: var(--french-rose);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .navbar.active .navbar-link {
@@ -786,4 +790,251 @@ footer {
 \*----------------------------------------------------------------*/
 
 @media (min-width: 768px) {
+  :root {
+    /*
+  Typography
+  */
+    --fs-2: 35px;
+    --fs-4: 20px;
+  }
+
+  /*
+  Reused Style
+  */
+
+  .container {
+    max-width: 740px;
+  }
+
+  /*
+  About
+  */
+
+  .about-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .about-card .card-title {
+    padding-inline: 0;
+  }
+
+  /*
+  Contact
+  */
+
+  .contact-title {
+    --fs-2: 42px;
+  }
+}
+
+/*----------------------------------------------------------------*\
+                   #RESPONSIVE FOR LARGER THAN 1024PX
+\*----------------------------------------------------------------*/
+
+@media (min-width: 1024px) {
+  /*
+  Reused Style
+  */
+  .container {
+    max-width: 950px;
+  }
+
+  /*
+  Header
+  */
+  .navbar-menu-btn {
+    display: none;
+  }
+
+  .navbar {
+    max-height: unset;
+    visibility: visible;
+    position: static;
+    width: auto;
+    background: none;
+    pointer-events: all;
+    overflow: visible;
+    display: flex;
+  }
+
+  .navbar-list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px;
+  }
+
+  .navbar-link {
+    opacity: 1;
+    padding: 0 15px;
+  }
+
+  .navbar .btn-primary {
+    display: block;
+  }
+
+  /*
+  Hero
+  */
+
+  .hero-content {
+    max-width: 550px;
+  }
+
+  .shape-content {
+    width: 50%;
+    margin-top: 150px;
+    right: 200px;
+  }
+
+  /*
+  About
+  */
+  .about-top .section-text {
+    max-width: 650px;
+    margin-inline: auto;
+  }
+
+  .about-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .about-bottom-banner {
+    margin-bottom: 0;
+    height: 330px;
+  }
+
+  .about-bottom-content {
+    padding-inline: 0;
+    text-align: center;
+  }
+
+  .about-bottom-content .btn-secondry {
+    margin-inline: auto;
+  }
+
+  /*
+  Features
+  */
+
+  .features :is(.section-title, .section-text) {
+    max-width: 650px;
+    margin-inline: auto;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 100px;
+  }
+
+  .feature-item-banner {
+    margin-inline: 0;
+    margin-bottom: 0;
+  }
+
+  .feature-item-content {
+    width: 50%;
+    text-align: left;
+  }
+
+  .feature-item:last-child {
+    flex-direction: row-reverse;
+  }
+
+  /*
+  CTA
+  */
+
+  .cta-card > * {
+    max-width: 550px;
+    margin-inline: auto;
+  }
+
+  /*
+  Contact
+  */
+
+  .contact .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .contact-content {
+    max-width: 400px;
+  }
+
+  .contact-title {
+    text-align: left;
+  }
+
+  .contact-form {
+    width: 50%;
+  }
+
+  /*
+  Footer
+  */
+
+  .footer-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .footer-brand,
+  .footer-link-list:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .footer-link-box {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+  }
+}
+
+/*----------------------------------------------------------------*\
+                   #RESPONSIVE FOR LARGER THAN 1200PX
+\*----------------------------------------------------------------*/
+
+@media (min-width: 1200px) {
+  :root {
+    --fs-2: 42px;
+  }
+
+  .container {
+    max-width: 1150px;
+  }
+
+  .hero .shape-content {
+    right: 80px;
+  }
+  .hero .blur-background {
+    border-radius: 20px;
+  }
+  .features .h2 {
+    --fs-2: 42px;
+  }
+
+  .features :is(.section-title, .section-text) {
+    max-width: 850px;
+  }
 }
