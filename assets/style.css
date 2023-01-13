@@ -1024,8 +1024,14 @@ footer {
     max-width: 1150px;
   }
 
+  .hero .container {
+    margin-top: -100px;
+  }
+
   .hero .shape-content {
-    right: 80px;
+    right: 20px;
+    top: -30%;
+    width: 60%;
   }
   .hero .blur-background {
     border-radius: 20px;
